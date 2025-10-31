@@ -3,17 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
   <nav>
     <a href="/">主页</a> |
-    <a href="/about/">关于我</a> |
-    <a href="/projects/">项目</a>
+    <a href="/about/">关于我</a>
   </nav>
   <hr>
   <main>
     {{ content }}
   </main>
+
+  <!-- ✅ MathJax 支持 $ 和 $$ -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    svg: { fontCache: 'global' }
+  };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 </body>
 </html>
