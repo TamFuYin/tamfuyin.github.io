@@ -1,0 +1,29 @@
+name: Deploy blog
+on:
+  workflow_dispatch:  # 手动或 API 触发
+  repository_dispatch:
+    types: [deploy_blog]  # 外部触发事件
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Build blog
+        run: |
+          # 假设你用 Hugo / Jekyll / Hexo 等
+          hugo
+          # 或 npm run build 等等
+
+      - name: Deploy to gh-pages
+        run: |
+          git add .
+          git commit -m "Auto update blog"
+          git push
