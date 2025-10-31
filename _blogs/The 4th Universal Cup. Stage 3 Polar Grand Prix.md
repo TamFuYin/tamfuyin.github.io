@@ -1,7 +1,8 @@
 ---
-title: Polar GP 总结
+layout: default
+title: The 4th Universal Cup. Stage 3 Polar Grand Prix
+permalink: /blog/the-4th-universal-cup-stage-3-polar-grand-prix/
 ---
-
 
 怎么这么困难
 
