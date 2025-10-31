@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Polar GP 总结
 ---
 

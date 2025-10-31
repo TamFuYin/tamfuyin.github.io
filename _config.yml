@@ -1,3 +1,12 @@
 title: TamFuYin's Blog
 description: 欢迎来到我的 GitHub Pages 网站
 theme: minima
+collections:
+  blogs:
+    output: true
+    permalink: /blog/:name/
+defaults:
+  - scope:
+      path: "_blogs"
+    values:
+      layout: default
