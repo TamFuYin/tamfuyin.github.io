@@ -5,21 +5,21 @@ title: Tam Fu Yin's Blog
 
 这是我的个人博客主页。主要发布算法竞赛内容。
 
-<button id="uploadBtn">📝 一键上传博客</button>
+
+<button id="uploadBtn">上传博客</button>
 
 <script>
-document.getElementById("uploadBtn").addEventListener("click", async () => {
-  const response = await fetch("https://github-pages-worker.tamfuyin.workers.dev/", {
-    method: "POST"
+document.getElementById("uploadBtn").onclick = async () => {
+  const res = await fetch("https://github-pages-worker.tamfuyin.workers.dev/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: "Update from button" })
   });
-
-  if (response.ok) {
-    alert("✅ 已触发自动上传！");
-  } else {
-    alert("❌ 触发失败，请检查 Worker 部署。");
-  }
-});
+  const text = await res.text();
+  alert(text);
+};
 </script>
+
 
 
 
